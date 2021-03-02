@@ -24,8 +24,7 @@ if __name__=='__main__':
     DataClass = GetData(start ,end, CurrencyPairList, "Yahoo", "assetallocation")
     AssetAllocateData = DataClass.CurrencyPairTicker()
     AllocationClass = AssetAllocation(AssetAllocateData,CurrencyPairList,start , end )
-    result = AllocationClass.Simulation()         
-    #AllocationClass.plotting()     
+    result = AllocationClass.Simulation()           
     
     StrategyDataClass = GetData(start ,end, CurrencyPairList, "Yahoo", "strategy")
     StrategyData = pd.DataFrame(StrategyDataClass.CurrencyPairTicker())
