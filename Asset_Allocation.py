@@ -6,30 +6,18 @@ Created on Sun Feb 28 12:48:00 2021
 @author: kelly
 """
 import pandas as pd 
-import quandl 
 import numpy as np 
-#import cvxpy as cp
 import datetime as dt
-#from decimal import Decimal 
-import pandas_datareader.data as pdr 
 import matplotlib.pyplot as plt 
-quandl.ApiConfig.api_key = "PXoA79qRmDpA5sMhVmZz"
-
-
-#CurrencyPairTicker =['BOE/XUDLJYD', "RBA/FXRUSD","ECB/EURUSD"]
 
 
 
 class AssetAllocation():  
     def __init__(self, data, CurrencyPairTicker,start_date, end_date):
-        #self.CurrencyPairTickerDict = { 'BOE/XUDLJYD':"USDJPY", "RBA/FXRUSD":"AUDUSD", \
-        #             "ECB/EURUSD": "EURUSD" }
-        
         self.df = pd.DataFrame(data) 
         self.CurrencyPairTicker =  CurrencyPairTicker
         self.start = start_date 
         self.end = end_date 
-        #self.get_data()
         self.CovarianceMatrix()
         self.Weights()
         self.PortfolioSTD()
@@ -37,15 +25,8 @@ class AssetAllocation():
         self.PortfolioReturn()
         self.SharpRatio()
         self.ExpectedReturn = self.AverageReturn
+
         
-    
-    def __repr__():
-        return ""
-
-
-   
-
-
     def CovarianceMatrix(self):
         df_ret = np.log(self.df/self.df.shift(1))
         df_ret.dropna(inplace = True)
@@ -71,8 +52,7 @@ class AssetAllocation():
     def PortfolioSTD(self):
         self.Port_STD = np.sqrt(np.dot(np.dot(self.WeightArray.T, self.Cor_Mat), self.WeightArray))
         
-        
-    
+         
     def RiskFreeRate(self):
         for i in range(10):
             df = pdr.DataReader('DGS10','fred', start = self.end, end = self.end )
@@ -90,10 +70,8 @@ class AssetAllocation():
         counter = 0 
         data = pd.DataFrame(columns = ["Return(%)", "Risk", "W1", "W2", "W3","Sharp" ], index =np.arange(10000))
         
-        for i in range(10000):
-            
-            counter += 1 
-            
+        for i in range(10000):            
+            counter += 1         
             self.Weights()
             self.PortfolioReturn()
             self.PortfolioSTD()
@@ -116,18 +94,9 @@ class AssetAllocation():
         plt.figure(figsize = (10,7))
         plt.scatter(self.data['Return(%)'], self.data["Risk"])
         xlabels = "Risk"
-        ylabels = "Return(%)"
-        
+        ylabels = "Return(%)"    
         plt.xlabel(xlabels)
         plt.ylabel(ylabels)
         plt.show()
-'''        
-    def get_data(self):
-        data = pd.DataFrame()
-        for i in self.CurrencyPairTicker:
-            temp = quandl.get(i, start_date = self.start, end_date = self.end )
-            data[i] = temp["Value"]
-        data.columns = pd.Series(data.columns).map(self.CurrencyPairTickerDict)
-        #self.df = data    
-'''  
+
 
