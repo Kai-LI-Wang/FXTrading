@@ -9,7 +9,7 @@ import pandas_datareader.data as pdr
 import quandl 
 import pandas as pd 
 
-quandl.ApiConfig.api_key = "PXoA79qRmDpA5sMhVmZz"
+quandl.ApiConfig.api_key = "" # quandl api key 
 
 class GetData():
     
@@ -44,15 +44,5 @@ class GetData():
         return pd.DataFrame(data)
        
         
-        
-   
-'''  
-import datetime as dt 
-start = dt.datetime(2019,1,1)
-end = dt.datetime(2021,2,20)
-currencypair = ["USDJPY","AUDUSD","EURUSD"]
-
-a = GetData(start ,end, currencypair, "Yahoo", "assetallocation")
-a.CurrencyPairTicker()
-'''        
+            
 
