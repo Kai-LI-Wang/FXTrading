@@ -6,13 +6,6 @@ Created on Tue Mar  2 16:46:50 2021
 @author: kelly
 """
 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jan 31 17:49:34 2021
-
-@author: kelly
-"""
 import pandas as pd 
 import numpy as np 
 import warnings
