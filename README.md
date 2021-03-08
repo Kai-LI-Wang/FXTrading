@@ -4,4 +4,5 @@
 標的貨幣：["USDJPY","AUDUSD","EURUSD"]  
 資料期間：2018-1-1 ~ 2021-2-10  
 Lotsize: 0.01  
-
+交易數量：22
+損益結果：位於result.csv 
