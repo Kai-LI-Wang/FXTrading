@@ -2,7 +2,11 @@
 ### |  Bolliger Band strategy  |  
   
 策略：  
-當價格觸及upper band，同時目前價格與開盤價的差大於前三日最高價格與最低價格差的平均時，賣出標的貨幣; 反之，當價格觸及lower band時，同時目前價格與開盤價的差大於前兩日最高價格與最低價格差的平均時，買進標的貨幣  
+當價格觸及upper band，同時目前價格與開盤價的差大於前三日最高價格與最低價格差的平均時，賣出標的貨幣; 反之，當價格觸及lower band時，同時目前價格與開盤價的差大於前兩日最高價格與最低價格差的平均時，買進標的貨幣;  
+  
+Stop Loss: 100 pips
+  
+Take Proft: 100 pips
   
 標的貨幣：  
 USDJPY,AUDUSD,EURUSD  
