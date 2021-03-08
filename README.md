@@ -6,9 +6,9 @@
 USDJPY,AUDUSD,EURUSD  
 ### 資料期間：  
 2018-1-1 ~ 2021-2-10  
-#### Timeframe:  D1  
-#### Lotsize:0.01  
-#### Leverage:無  
-#### 交易數量：22  
-#### 損益結果：記錄在ResultData.csv  
+### Timeframe：D1  
+### Lotsize：0.01  
+### Leverage：無  
+### 交易數量：22  
+### 損益結果：記錄在ResultData.csv  
 
