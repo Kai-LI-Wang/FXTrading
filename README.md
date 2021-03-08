@@ -16,5 +16,5 @@ USDJPY,AUDUSD,EURUSD
 －－－－－－－－－－－－－－－－－－－－－－  
 strategy.py 為計算策略與損益  
 AssetAllocation.py 計算三種貨幣投資權重  
-RetreiveData.py 運用yahoo api取得資料
+RetreiveData.py 運用yahoo api取得資料  
 －－－－－－－－－－－－－－－－－－－－－－  
